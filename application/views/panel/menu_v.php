@@ -1,0 +1,48 @@
+<section class="wrapper">
+	<div class="row">
+    	<div class="col-lg-12">
+        	<section class="panel">
+            <header class="panel-heading">
+            <i class="icon-edit"></i> Menu
+            </header>
+        
+        <div class="row">
+        	<div class="col-lg-12">
+            <section class="panel">
+                <header class="panel-heading">
+                Data Menu
+                </header>
+                			
+			<div class="panel-body">
+            <form class="form-horizontal tasi-form" action="<?php echo site_url('panel/menu/updatedata'); ?>" method="post" enctype="multipart/form-data">
+            <input type="hidden" name="<?php echo $this->security->get_csrf_token_name(); ?>" value="<?php echo $this->security->get_csrf_hash(); ?>">
+            
+            <div class="form-group">
+                <label class="col-sm-2 control-label col-sm-2">Short Description :</label>
+                <div class="col-sm-10">
+                <textarea class="form-control ckeditor" name="short" rows="6"><?php echo $menu->content_short; ?></textarea>
+                <br>
+                <p><b>*) Maximal : 100 Character</b></p>
+                </div>                
+            </div>
+
+            <div class="form-group">
+				<label class="col-sm-2 control-label col-sm-2">Description :</label>
+                <div class="col-sm-10">
+                <textarea class="form-control ckeditor" name="deskripsi" rows="6"><?php echo $menu->content_deskripsi; ?></textarea>
+                </div>
+			</div>                  
+           
+			<button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-floppy-disk"></span> Update</button>
+            <button type="reset" class="btn btn-danger"><span class="glyphicon glyphicon glyphicon-share-alt"></span> Reset</button>            
+                                        
+			</form>
+            </div>
+			</section>
+			</div>
+        </div>		
+			
+            </section>
+		</div>
+	</div>
+</section>
